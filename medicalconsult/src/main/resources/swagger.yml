@@ -1,0 +1,289 @@
+openapi: 3.0.1
+info:
+  title: API Medical Consult
+  description: API REST para o gerenciamento de usuários e agendamento de consultas médicas.
+  version: v1.0
+  contact:
+    name: Suporte API
+    email: suporte@medicalconsult.com
+    url: http://medicalconsult.com
+servers:
+  - url: http://localhost:8080
+    description: Servidor local de desenvolvimento
+paths:
+  /users/{id}:
+    get:
+      tags:
+        - Gerenciamento de Usuários
+      summary: Buscar usuário por ID
+      description: Retorna as informações de um usuário específico com base no seu ID.
+      operationId: buscarUser
+      parameters:
+        - name: id
+          in: path
+          description: ID do usuário a ser buscado.
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Usuário encontrado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: Usuário não encontrado.
+    put:
+      tags:
+        - Gerenciamento de Usuários
+      summary: Atualizar usuário por ID
+      description: Atualiza as informações de um usuário existente.
+      operationId: atualizarUser
+      parameters:
+        - name: id
+          in: path
+          description: ID do usuário a ser atualizado.
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Dados atualizados do usuário.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+      responses:
+        "200":
+          description: Usuário atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: Usuário não encontrado.
+    delete:
+      tags:
+        - Gerenciamento de Usuários
+      summary: Deletar usuário por ID
+      description: Remove um usuário existente com base no seu ID.
+      operationId: deletarUser
+      parameters:
+        - name: id
+          in: path
+          description: ID do usuário a ser deletado.
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Usuário deletado com sucesso.
+        "404":
+          description: Usuário não encontrado.
+
+  /consults/{id}:
+    get:
+      tags:
+        - Gerenciamento de Consultas
+      summary: Buscar consulta por ID
+      description: Retorna as informações de uma consulta específica.
+      operationId: buscarConsult
+      parameters:
+        - name: id
+          in: path
+          description: ID da consulta a ser buscada.
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Consulta encontrada com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Consult"
+        "404":
+          description: Consulta não encontrada.
+    put:
+      tags:
+        - Gerenciamento de Consultas
+      summary: Atualizar consulta por ID
+      description: Atualiza as informações de uma consulta existente.
+      operationId: atualizarConsult
+      parameters:
+        - name: id
+          in: path
+          description: ID da consulta a ser atualizada.
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Dados atualizados da consulta.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Consult"
+        required: true
+      responses:
+        "200":
+          description: Consulta atualizada com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Consult"
+        "404":
+          description: Consulta não encontrada.
+    delete:
+      tags:
+        - Gerenciamento de Consultas
+      summary: Deletar consulta por ID
+      description: Remove uma consulta existente.
+      operationId: deletarConsult
+      parameters:
+        - name: id
+          in: path
+          description: ID da consulta a ser deletada.
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Consulta deletada com sucesso.
+        "404":
+          description: Consulta não encontrada.
+
+  /users:
+    get:
+      tags:
+        - Gerenciamento de Usuários
+      summary: Listar usuários
+      description: Retorna uma lista de todos os usuários registrados.
+      operationId: listarUsers
+      responses:
+        "200":
+          description: Lista de usuários obtida com sucesso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    post:
+      tags:
+        - Gerenciamento de Usuários
+      summary: Cadastrar novo usuário
+      description: Adiciona um novo usuário ao sistema.
+      operationId: cadastrarUser
+      requestBody:
+        description: Dados do novo usuário.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+      responses:
+        "201":
+          description: Usuário cadastrado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+
+  /consults:
+    get:
+      tags:
+        - Gerenciamento de Consultas
+      summary: Listar consultas
+      description: Retorna uma lista de todas as consultas registradas.
+      operationId: listarConsults
+      responses:
+        "200":
+          description: Lista de consultas obtida com sucesso.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Consult"
+    post:
+      tags:
+        - Gerenciamento de Consultas
+      summary: Cadastrar nova consulta
+      description: Adiciona uma nova consulta ao sistema.
+      operationId: cadastrarConsult
+      requestBody:
+        description: Dados da nova consulta.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Consult"
+        required: true
+      responses:
+        "201":
+          description: Consulta cadastrada com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Consult"
+
+components:
+  schemas:
+    User:
+      type: object
+      description: Representa um usuário do sistema.
+      properties:
+        idUser:
+          type: integer
+          format: int64
+          description: ID único do usuário.
+        nameUser:
+          type: string
+          description: Nome completo do usuário.
+        email:
+          type: string
+          description: E-mail do usuário.
+        cpf:
+          type: string
+          description: CPF do usuário.
+        telefone:
+          type: string
+          description: Telefone de contato do usuário.
+        dataNascimento:
+          type: string
+          format: date-time
+          description: Data de nascimento do usuário.
+        permissao:
+          type: string
+          description: Nível de permissão do usuário.
+          enum:
+            - ADMIN
+            - SECRETARIO
+
+    Consult:
+      type: object
+      description: Representa uma consulta médica.
+      properties:
+        idConsult:
+          type: integer
+          format: int64
+          description: ID único da consulta.
+        dataConsult:
+          type: string
+          format: date-time
+          description: Data e horário da consulta.
+        especialidade:
+          type: string
+          description: Especialidade médica da consulta.
+        profissional:
+          type: string
+          description: Nome do profissional responsável pela consulta.
+        user:
+          $ref: "#/components/schemas/User"
+          description: Usuário relacionado à consulta.

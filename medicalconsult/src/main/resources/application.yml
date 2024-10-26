@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+java:
+  runtime:
+    version: '17'
+springdoc:
+  api-docs:
+    path: /api-medical-consult
+

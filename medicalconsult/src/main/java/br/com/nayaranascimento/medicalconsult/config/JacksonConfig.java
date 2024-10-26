@@ -1,4 +1,4 @@
-package br.com.nayaranascimento.medicalconsult.user.objects;
+package br.com.nayaranascimento.medicalconsult.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -13,11 +13,12 @@ import java.util.TimeZone;
 public class JacksonConfig {
 
     @Bean
-    public ObjectMapper objects(Jackson2ObjectMapperBuilder builder){
+    public ObjectMapper objectMapper(Jackson2ObjectMapperBuilder builder){
         ObjectMapper objectMapper = builder.createXmlMapper(false).build();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         dateFormat.setTimeZone(TimeZone.getTimeZone("GTM-3"));
+        objectMapper.setDateFormat(dateFormat);
 
         objectMapper.disable(SerializationFeature.WRITE_DATE_KEYS_AS_TIMESTAMPS);
 
