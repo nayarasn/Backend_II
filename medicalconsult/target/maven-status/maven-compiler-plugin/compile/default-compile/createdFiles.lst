@@ -1,8 +1,10 @@
 br\com\nayaranascimento\medicalconsult\config\JacksonConfig.class
+br\com\nayaranascimento\medicalconsult\config\SecurityConfig.class
 br\com\nayaranascimento\medicalconsult\user\domain\User.class
 br\com\nayaranascimento\medicalconsult\user\repository\UserRepository.class
 br\com\nayaranascimento\medicalconsult\consult\services\ConsultService.class
 br\com\nayaranascimento\medicalconsult\consult\repositories\ConsultRepository.class
+br\com\nayaranascimento\medicalconsult\user\objects\JacksonConfig.class
 br\com\nayaranascimento\medicalconsult\consult\resources\ConsultResource.class
 br\com\nayaranascimento\medicalconsult\exception\ExceptionDataIntegrityViolation.class
 br\com\nayaranascimento\medicalconsult\user\domain\Permissao.class

@@ -13,7 +13,7 @@ import java.util.TimeZone;
 public class JacksonConfig {
 
     @Bean
-    public ObjectMapper objectMapper(Jackson2ObjectMapperBuilder builder){
+    public ObjectMapper objects(Jackson2ObjectMapperBuilder builder){
         ObjectMapper objectMapper = builder.createXmlMapper(false).build();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

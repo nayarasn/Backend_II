@@ -1,4 +1,5 @@
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\config\JacksonConfig.java
+C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\config\SecurityConfig.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\config\SwaggerConfig.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\consult\domain\Consult.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\consult\repositories\ConsultRepository.java
@@ -8,6 +9,7 @@ C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\m
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\MedicalconsultApplication.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\user\domain\Permissao.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\user\domain\User.java
+C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\user\objects\JacksonConfig.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\user\repository\UserRepository.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\user\resource\UserResource.java
 C:\Users\nayara\Desktop\Sistemas para Internet\P4\Backend_II\workspace_backend\medicalconsult\src\main\java\br\com\nayaranascimento\medicalconsult\user\services\UserService.java

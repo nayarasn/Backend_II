@@ -27,7 +27,7 @@ public class Consult {
     private String profissional;
 
     @ManyToOne
-    @JoinColumn(name = "id_User")
+    @JoinColumn(name = "ID_USER")
     private User user;
 
     public Consult(long idConsult, Date dataConsult, String especialidade, String profissional, User user) {

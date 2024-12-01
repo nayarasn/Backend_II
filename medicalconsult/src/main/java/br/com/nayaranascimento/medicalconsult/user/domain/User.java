@@ -1,9 +1,12 @@
 package br.com.nayaranascimento.medicalconsult.user.domain;
 
+import br.com.nayaranascimento.medicalconsult.consult.domain.Consult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -30,6 +33,14 @@ public class User {
     @Column(name = "DATA_NASCIMENTO")
     private Date dataNascimento;
 
+    @Column(name = "PERMISSAO")
+    @Enumerated(EnumType.STRING)
+    private Permissao permissao;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Consult> consultas;
+
     public User() {
     }
 
@@ -40,5 +51,7 @@ public class User {
         this.cpf = cpf;
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
+        this.permissao = permissao;
+        this.consultas = consultas;
     }
 }
